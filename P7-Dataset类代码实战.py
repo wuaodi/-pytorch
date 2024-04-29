@@ -6,15 +6,15 @@ import os
 class MyData(Dataset):
     def __init__(self, root_dir, label_dir):
         self.root = root_dir
-        self.label_fir = label_dir
-        self.image_dir = os.path.join(self.root, self.label_fir)
+        self.label_dir = label_dir
+        self.image_dir = os.path.join(self.root, self.label_dir)
         self.image_list = os.listdir(self.image_dir)
 
     def __getitem__(self, idx):
         """重写[]方法的调用"""
         img_path = os.path.join(self.image_dir, self.image_list[idx])
         img = Image.open(img_path)
-        label = self.label_fir
+        label = self.label_dir
         return img, label
 
     def __len__(self):
