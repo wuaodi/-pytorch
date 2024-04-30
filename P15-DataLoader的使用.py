@@ -17,7 +17,7 @@ for epoch in range(2):
     step = 0
     for data in test_loader:
         img, label = data
-        # 注意由于是一个batch的图片不是单张图片，所以用add_images
+        # 注意由于是一个batch的图片不是单张图片，所以用add_images, 单张图片用的是add_image
         writer.add_images('epoch{}'.format(epoch), img, step)
         step += 1
 
