@@ -15,10 +15,12 @@ test_dataloader = DataLoader(test_set, 64, drop_last=True)
 # 搭建网络，使用nn.Conv2d，单层，输出通道为6
 class Mymodel(nn.Module):
     def __init__(self):
+        """这里写网络层"""
         super().__init__()
         self.conv1 = nn.Conv2d(3, 6, 3)
 
     def forward(self, x):
+        """这里写层间的计算"""
         y = self.conv1(x)
         return y
 
