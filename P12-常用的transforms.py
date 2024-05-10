@@ -14,6 +14,8 @@ img = Image.open('练手数据集/train/ants_image/0013035.jpg')
 writer = SummaryWriter('logs')
 
 # ToTensor，使用tensorboard显示
+""" Converts a PIL Image or numpy.ndarray (H x W x C) in the range
+    [0, 255] to a torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0]"""
 trans_totensor = transforms.ToTensor()
 img_tensor = trans_totensor(img)
 writer.add_image('tensor img', img_tensor, 0)
